@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Click to Continue</title>
+  <title>Tap to Win ₹500</title>
   <style>
     body {
       margin: 0;
@@ -16,6 +16,7 @@
     }
 
     #popup {
+      position: relative;
       max-width: 90%;
       cursor: pointer;
     }
@@ -31,24 +32,39 @@
     #popup img:hover {
       transform: scale(1.05);
     }
+
+    /* ✅ Stylish Overlay Text */
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 12px 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px #000000cc;
+      font-family: Arial, sans-serif;
+      letter-spacing: 1px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- ✅ Popup Image -->
+  <!-- ✅ Popup Image with Center Text -->
   <div id="popup">
-    <img src="gift.jpg" alt="Click to Continue">
+    <img src="gift.jpg" alt="Tap to Win ₹500">
+    <div class="overlay-text">💰 Tap to Win ₹500</div>
   </div>
 
-  <!-- ✅ Script for Click + Redirect -->
   <script>
-    const directLink = "https://n91hg.com/4/9565626?var={your_source_id}";  // ✅ Aapka original direct link yahan laga diya gaya hai
+    const directLink = "https://n91hg.com/4/9565626?var={your_source_id}"; // 🔁 Aapka direct link
 
     document.getElementById("popup").addEventListener("click", function () {
-      // Hide popup
       document.getElementById("popup").style.display = "none";
-
-      // Redirect to direct link
       window.location.href = directLink;
     });
   </script>
